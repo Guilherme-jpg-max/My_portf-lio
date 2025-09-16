@@ -109,5 +109,56 @@
                 </div>
             </div>
         </section>
+
+        <section id="projects">
+            <h2>Meus Projetos</h2>
+            <p>Explore alguns dos meus projetos recentes.</p>
+            <div class="projects-container">
+                {% for project in repos %}
+                <article class="project">
+                    <h3>{{ project.name }}</h3>
+                    <p>{{ project.description or "No description provided." }}</p>
+                    <footer>
+                        <a href="{{ project.html_url }}" target="_blank" class="btn">Ver GitHub</a>
+                    </footer>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+
+        <section id="contact">
+            <div class="container">
+                <h2>Fale comigo</h2>
+                <p>Entre em contato para colaborações ou dúvidas.</p>
+                <div id="flash-container"></div>
+       
+                <form id="contact-form" action="{{ url_for('main.contact') }}" method="post">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Nome:" required>
+                
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email:" required>
+                
+                    <label for="message">Menssagem</label>
+                    <textarea id="message" name="message" placeholder="Menssagem:" required></textarea>
+                
+                    <div class="form-actions">
+                        <button type="reset" class="btn">Corrigir</button>
+                        <button type="submit" class="btn">Enviar Menssagem</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
     </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Guilherme Carlos.</p>
+        </div>
+    </footer>
+
 </body>
+
+</html>
