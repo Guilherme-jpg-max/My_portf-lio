@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 
-
 SECRET_KEY = os.getenv('SECRET_KEY')
 MAIL_SERVER = os.getenv('MAIL_SERVER', 'smtp.gmail.com')
 MAIL_PORT = int(os.getenv('MAIL_PORT', 587))
