@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="#" alt="Logo">
+            </div>
+
+            <h1> Guilherme Carlos</h1>
+
+            <div class="menu-hamburguer" onclick="toggleMenu()">&#9776;</div>
+
+            <nav>
+                <ul id="nav-links">
+                    <li class="{{ 'active' if section == 'home' else '' }}"><a href="#home">Inicio</a></li>
+                    <li class="{{ 'active' if section == 'skills' else '' }}"><a href="#skills">Habilidades</a></li>
+                    <li class="{{ 'active' if section == 'about' else '' }}"><a href="#about">Sobre mim</a></li>
+                    <li class="{{ 'active' if section == 'projects' else '' }}"><a href="#projects">Projetos</a></li>
+                    <li class="{{ 'active' if section == 'contact' else '' }}"><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="social-links">
+                <a href="https://github.com/Guilherme-jpg-max" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="http://www.linkedin.com/in/guilherme-carlos-99b83b273" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+</body>
