@@ -28,9 +28,9 @@ def projects():
     return render_templates("index.html", title="Projects", section="projects")
 
 
-@bp.route("/bout")
-def projects():
-    return render_templates("index.html", title="bout", section="bout")
+@bp.route("/about")
+def about():
+    return render_templates("index.html", title="about", section="about")
 
 @bp.route("/contact", methods=["POST"])
 def contact():
