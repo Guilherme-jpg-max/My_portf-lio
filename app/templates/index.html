@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
 
     <title>{{ title }}</title>
 </head>
@@ -10,7 +13,7 @@
     <header>
         <div class="header-content">
             <div class="logo">
-                <img src="#" alt="Logo">
+                <img src="{{ url_for('static', filename='img/logo_pixel_art.png') }}" alt="Logo">
             </div>
 
             <h1> Guilherme Carlos</h1>
@@ -50,7 +53,7 @@
                     </div>
                 </div>
                 <div class="image-container">
-                    <img src="#" alt="home_img">
+                    <img src="{{ url_for('static', filename='img/home_pixel_art_linux.png') }}" alt="Logo">
                 </div>
             </div>
         </section>
@@ -179,7 +182,7 @@
             <p>© 2024 Guilherme Carlos.</p>
         </div>
     </footer>
-
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>
