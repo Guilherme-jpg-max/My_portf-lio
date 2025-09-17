@@ -6,7 +6,7 @@ def is_valid_email(email):
     email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
     return re.match(email_regex, email) is not None
 
-def precess_contact_form(request, mail, os):
+def process_contact_form(request, mail, os):
     name = request.form.get("name", "").strip()
     email = request.form.get("email", "").strip()
     message = request.form.get("massege", "").strip()
