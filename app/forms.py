@@ -9,7 +9,7 @@ def is_valid_email(email):
 def process_contact_form(request, mail, os):
     name = request.form.get("name", "").strip()
     email = request.form.get("email", "").strip()
-    message = request.form.get("massege", "").strip()
+    message = request.form.get("message", "").strip()
     
     if not name or not email or not message:
         flash("Por favor, preencha todos os campos.", "Error")
