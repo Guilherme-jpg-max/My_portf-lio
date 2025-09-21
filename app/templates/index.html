@@ -5,21 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
     <title>{{ title }}</title>
 </head>
 <body>
+
+    <div class="galaxy">
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+
+
     <header>
         <div class="header-content">
             <div class="logo">
                 <img src="{{ url_for('static', filename='img/logo_pixel_art.png') }}" alt="Logo">
             </div>
-
             <h1> Guilherme Carlos</h1>
-
             <div class="menu-hamburguer" onclick="toggleMenu()">&#9776;</div>
-
             <nav>
                 <ul id="nav-links">
                     <li class="{{ 'active' if section == 'home' else '' }}"><a href="#home">Inicio</a></li>
@@ -29,7 +52,6 @@
                     <li class="{{ 'active' if section == 'contact' else '' }}"><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
-
             <div class="social-links">
                 <a href="https://github.com/Guilherme-jpg-max" target="_blank">
                     <i class="fab fa-github"></i>
@@ -40,7 +62,6 @@
             </div>
         </div>
     </header>
-
     <main>
         <section id="home">
             <div class="main-section">
@@ -60,72 +81,133 @@
 
         <section id="skills">
             <h2>Habilidades</h2>
-            <p>Aqui estão algumas das tecnologias com as quais tenho conhecimentos:</p>
+            <p class="section-description">Aqui estão algumas das tecnologias com as quais tenho conhecimentos:</p>
             <div class="skills-container">
-                <div class="skill">
-                    <button onclick="toggleSkill('python')">Python</button>
-                    <p id="python" class="skill-description">
-                        Habilidades:Django, Flask
-                    </p>
+
+                <div class="skill-card" id="python-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('python-card')">
+                        <div class="skill-card-front python-card"></div>
+                        <div class="skill-card-back">
+                            <p id="python" class="skill-description">Django, Flask</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill">
-                    <button onclick="toggleSkill('django')">Django</button>
-                    <p id="django" class="skill-description">
-                        Habilidades: Desenvolvimento web leve, APIs RESTful, criação de APIS, Autenticação
-                    </p>
+
+                <div class="skill-card" id="django-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('django-card')">
+                        <div class="skill-card-front django-card"></div>
+                        <div class="skill-card-back">
+                            <p id="django" class="skill-description">Desenvolvimento web, APIs RESTful, criação de APIs, Autenticação</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill">
-                    <button onclick="toggleSkill('flask')">Flask</button>
-                    <p id="flask" class="skill-description">
-                        Habilidades: Desenvolvimento web leve, APIs RESTful, criação de APIS, Autenticação
-                    </p>
+
+                <div class="skill-card" id="flask-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('flask-card')">
+                        <div class="skill-card-front flask-card"></div>
+                        <div class="skill-card-back">
+                            <p id="flask" class="skill-description">Desenvolvimento web, APIs RESTful, criação de APIs, Autenticação</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill">
-                    <button onclick="toggleSkill('postgresql')">PostgreSQL</button>
-                    <p id="postgresql" class="skill-description">
-                        Habilidades: Modelagem de banco de dados, queries SQL intermediarias
-                    </p>
+                
+                <div class="skill-card" id="postgresql-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('postgresql-card')">
+                        <div class="skill-card-front postgresql-card"></div>
+                        <div class="skill-card-back">
+                            <p id="postgresql" class="skill-description">Modelagem de banco de dados, queries SQL intermediárias</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill">
-                    <button onclick="toggleSkill('mysql')">MySQL</button>
-                    <p id="mysql" class="skill-description">
-                        Habilidades: Design de banco de dados, otimização de consultas, consultas avaçadas.
-                    </p>
+
+                <div class="skill-card" id="mysql-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('mysql-card')">
+                        <div class="skill-card-front mysql-card"></div>
+                        <div class="skill-card-back">
+                            <p id="mysql" class="skill-description">Design de banco de dados, otimização de consultas, consultas avançadas</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill">
-                    <button onclick="toggleSkill('java')">Java</button>
-                    <p id="java" class="skill-description">
-                        Habilidades: Desenvolvimento orientado a objetos, estruturas de dados, padrões de projeto
-                    </p>
+
+                <div class="skill-card" id="nodejs-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('nodejs-card')">
+                        <div class="skill-card-front nodejs-card"></div>
+                        <div class="skill-card-back">
+                            <p id="nodejs" class="skill-description">Desenvolvimento web, APIs RESTful, criação de APIs, Autenticação</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill">
-                    <button onclick="toggleSkill('git')">Git</button>
-                    <p id="git" class="skill-description">
-                        Habilidades: Controle de versão, branch management
-                    </p>
+
+                <div class="skill-card" id="docker-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('docker-card')">
+                        <div class="skill-card-front docker-card"></div>
+                        <div class="skill-card-back">
+                            <p id="docker" class="skill-description">Criação de containers, orquestração básica</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill">
-                    <button onclick="toggleSkill('github')">GitHub</button>
-                    <p id="github" class="skill-description">
-                        Habilidades: Hospedagem de código, gerenciamento de projetos
-                    </p>
+
+                <div class="skill-card" id="expressjs-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('expressjs-card')">
+                        <div class="skill-card-front expressjs-card"></div>
+                        <div class="skill-card-back">
+                            <p id="expressjs" class="skill-description">Desenvolvimento web, APIs RESTful, criação de APIs, Autenticação</p>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="skill-card" id="javascript-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('javascript-card')">
+                        <div class="skill-card-front javascript-card"></div>
+                        <div class="skill-card-back">
+                            <p id="javascript" class="skill-description">Manipulação do DOM, ES6+, desenvolvimento web básico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card" id="fastapi-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('fastapi-card')">
+                        <div class="skill-card-front fastapi-card"></div>
+                        <div class="skill-card-back">
+                            <p id="fastapi" class="skill-description">Desenvolvimento web, APIs RESTful, criação de APIs, Autenticação</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card" id="mongodb-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('mongodb-card')">
+                        <div class="skill-card-front mongodb-card"></div>
+                        <div class="skill-card-back">
+                            <p id="mongodb" class="skill-description">Modelagem de dados NoSQL, consultas e agregações</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card" id="git-card">
+                    <div class="skill-card-inner" onclick="toggleSkill('git-card')">
+                        <div class="skill-card-front git-card"></div>
+                        <div class="skill-card-back">
+                            <p id="git" class="skill-description">Controle de versão, branch management</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <section id="about">
-            <div class="container">
+            <div class="about-card">
                 <h2>Sobre mim</h2>
                 <p>
                     Hey, Dev!<br>
                     Me chamo <strong>Guilherme</strong>, sou desenvolvedor back-end e estudante do quinto semestre de 
-                    <strong>Sistemas de Informação</strong> no <strong>Instituto Federal de Ciência e Tecnologia do Ceará</strong>.  
-                    Minha jornada profissional começou longe do universo da programação, atuando com atendimento ao público, onde desenvolvi habilidades excepcionais de comunicação e trabalho em equipe.  
+                    <strong>Sistemas de Informação</strong> no <strong>Instituto Federal de Ciência e Tecnologia do Ceará</strong>. 
+                    Minha jornada profissional começou longe do universo da programação, atuando com atendimento ao público, onde desenvolvi habilidades excepcionais de comunicação e trabalho em equipe. 
                     Essas experiências aprimoraram minha capacidade de colaborar, ouvir e buscar soluções, competências que hoje aplico no desenvolvimento de sistemas e tecnologias.
                 </p>
                 <p>
                     Atualmente, utilizo linguagens como <strong>Python</strong>, com o framework <strong>Django</strong>, <strong>Flask</strong>, 
-                    <strong>PostgreSQL</strong>, <strong>MySQL</strong> e <strong>Java</strong> para transformar ideias em soluções digitais funcionais e escaláveis.  
+                    <strong>PostgreSQL</strong>, <strong>MySQL</strong> e <strong>Java</strong> para transformar ideias em soluções digitais funcionais e escaláveis. 
                     Sou movido pela curiosidade e pelo desejo constante de aprender, o que me permite enfrentar desafios com criatividade e eficiência.
                 </p>
                 <p>
@@ -136,10 +218,10 @@
 
         <section id="projects">
             <h2>Meus Projetos</h2>
-            <p>Explore alguns dos meus projetos recentes.</p>
+            <p class="section-description">Explore alguns dos meus projetos recentes.</p>
             <div class="projects-container">
                 {% for project in repos %}
-                <article class="project">
+                <article class="project-card">
                     <h3>{{ project.name }}</h3>
                     <p>{{ project.description or "No description provided." }}</p>
                     <footer>
@@ -150,23 +232,18 @@
             </div>
         </section>
 
-
         <section id="contact">
             <div class="container">
                 <h2>Fale comigo</h2>
-                <p>Entre em contato para colaborações ou dúvidas.</p>
+                <p class="contact-intro">Entre em contato para colaborações ou dúvidas.</p>
                 <div id="flash-container"></div>
-       
                 <form id="contact-form" action="{{ url_for('main.contact') }}" method="post">
                     <label for="name">Nome</label>
                     <input type="text" id="name" name="name" placeholder="Nome:" required>
-                
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Email:" required>
-                
                     <label for="message">Menssagem</label>
                     <textarea id="message" name="message" placeholder="Menssagem:" required></textarea>
-                
                     <div class="form-actions">
                         <button type="reset" class="btn">Corrigir</button>
                         <button type="submit" class="btn">Enviar Menssagem</button>
@@ -174,7 +251,6 @@
                 </form>
             </div>
         </section>
-
     </main>
 
     <footer>
@@ -182,7 +258,9 @@
             <p>© 2024 Guilherme Carlos.</p>
         </div>
     </footer>
+    
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/flash_messages.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/active-link.js') }}"></script>
 </body>
-
 </html>

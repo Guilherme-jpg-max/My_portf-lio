@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
 
-
 :root {
     --bg-color: #121212;
     --alt-bg-color: #1A1A1A;
@@ -22,11 +21,186 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    /* Mantenha suas fontes e cores */
+    font-family: 'Space Mono', monospace;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+
+    /* Estilos para o fundo de galáxia */
+    background: #000;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
 }
+
+/* Base para as estrelas e o fundo de galáxia */
+.galaxy {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca o fundo atrás de todo o conteúdo */
+    background: #000;
+    animation: zoom 10s infinite linear; /* Efeito de zoom */
+}
+
+/* Criação das estrelas */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation-name: shine;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Diferentes tamanhos para as estrelas */
+.star:nth-child(1) {
+    width: 2px;
+    height: 2px;
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    width: 3px;
+    height: 3px;
+    top: 30%;
+    left: 40%;
+    animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+    width: 1px;
+    height: 1px;
+    top: 50%;
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.star:nth-child(4) {
+    width: 4px;
+    height: 4px;
+    top: 80%;
+    left: 10%;
+    animation-delay: 1.5s;
+}
+
+.star:nth-child(5) {
+    width: 2px;
+    height: 2px;
+    top: 60%;
+    left: 90%;
+    animation-delay: 2s;
+}
+
+.star:nth-child(6) {
+    width: 2px;
+    height: 2px;
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.star:nth-child(7) {
+    width: 3px;
+    height: 3px;
+    top: 30%;
+    left: 40%;
+    animation-delay: 0.5s;
+}
+
+.star:nth-child(8) {
+    width: 1px;
+    height: 1px;
+    top: 50%;
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.star:nth-child(9) {
+    width: 4px;
+    height: 4px;
+    top: 80%;
+    left: 10%;
+    animation-delay: 1.5s;
+}
+
+.star:nth-child(10) {
+    width: 2px;
+    height: 2px;
+    top: 60%;
+    left: 90%;
+    animation-delay: 2s;
+}
+
+/* NOVAS ESTRELAS: Continue adicionando a partir daqui */
+
+.star:nth-child(1) {
+    width: 1px;
+    height: 1px;
+    top: 25%;
+    left: 80%;
+    animation-delay: 0.2s;
+}
+
+.star:nth-child(12) {
+    width: 3px;
+    height: 3px;
+    top: 55%;
+    left: 15%;
+    animation-delay: 0.8s;
+}
+
+.star:nth-child(13) {
+    width: 2px;
+    height: 2px;
+    top: 90%;
+    left: 55%;
+    animation-delay: 1.2s;
+}
+
+.star:nth-child(14) {
+    width: 1px;
+    height: 1px;
+    top: 40%;
+    left: 5%;
+    animation-delay: 1.8s;
+}
+
+.star:nth-child(15) {
+    width: 4px;
+    height: 4px;
+    top: 70%;
+    left: 95%;
+    animation-delay: 2.3s;
+}
+
+/* Animação das estrelas */
+@keyframes shine {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* Animação do zoom do fundo */
+@keyframes zoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Você pode adicionar mais estrelas e variar os valores para um efeito mais completo */
 
 a {
     text-decoration: none;
@@ -38,7 +212,6 @@ a {
     margin: 0 auto;
     padding: 0 2rem;
 }
-
 
 header {
     background-color: rgba(18, 18, 18, 0.9);
@@ -57,6 +230,7 @@ header {
 }
 
 .logo img {
+    margin-left: 35px;
     height: 40px;
     border-radius: 50%;
 }
@@ -83,6 +257,10 @@ nav a:hover, li.active a {
     color: var(--accent-color);
 }
 
+.social-links {
+    margin-right: 30px;
+}
+
 .social-links a {
     color: var(--secondary-color);
     margin-left: 1rem;
@@ -100,7 +278,6 @@ nav a:hover, li.active a {
     cursor: pointer;
 }
 
-
 main {
     padding: 0;
 }
@@ -114,6 +291,11 @@ section {
     position: relative;
     overflow: hidden;
     transition: background-color 0.5s ease;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+    border-bottom: none;
 }
 
 .dark-bg {
@@ -209,108 +391,372 @@ h2 {
     color: var(--bg-color);
 }
 
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+/* --- Seção de Habilidades (Skills) --- */
+
+.section-description {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
 }
 
-.skill {
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.1), 0 0 40px rgba(100, 255, 218, 0.05);
+    animation: float 4s ease-in-out infinite;
+
+    /* Novas propriedades para a imagem de fundo */
+    background-repeat: no-repeat;
+    background-size: 80%; /* Aumentado um pouco para a imagem ficar mais visível */
+    background-position: center;
+    position: relative;
+}
+
+.skill-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.skill-card.is-flipped .skill-card-inner {
+    transform: rotateY(180deg);
+}
+
+.skill-card-front, .skill-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Esconde a parte de trás durante a animação */
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.1), 0 0 40px rgba(100, 255, 218, 0.05);
+}
+
+/* O fundo da frente do card é a imagem */
+.skill-card-front {
+    background-color: var(--card-bg-color);
+    background-repeat: no-repeat;
+    background-size: 80% !important;
+    background-position: center !important;
+    border: 1px solid var(--border-color);
+}
+
+/* O fundo do verso do card é a cor de fundo do seu tema */
+.skill-card-back {
+    background-color: var(--card-bg-color);
+    color: var(--secondary-color);
+    transform: rotateY(180deg); /* Começa virado para trás */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.skill-description {
+    /* Remova a maioria dos estilos antigos */
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0; /* Torna o botão invisível, mas clicável */
+}
+
+.skill-description {
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.section-description {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
     background-color: var(--card-bg-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 1.5rem;
     text-align: center;
-    max-width: 250px;
-    width: 100%;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.1), 0 0 40px rgba(100, 255, 218, 0.05);
+    animation: float 4s ease-in-out infinite;
+
+    /* Novas propriedades para a imagem de fundo */
+    background-repeat: no-repeat;
+    background-size: 80% !important; /* Força o tamanho */
+    background-position: center !important; /* Força a posição */
+    position: relative;
+    min-height: 150px; /* Garante que os cards tenham uma altura mínima */
 }
 
-.skill:hover {
-    transform: translateY(-10px);
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.skill button {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    border: none;
-    padding: 0.5rem 1rem;
+.skill-card button {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
     border-radius: 5px;
-    font-weight: 700;
     cursor: pointer;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 1;
+    opacity: 0 !important;
 }
 
 .skill-description {
     display: none;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: var(--secondary-color);
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    z-index: 2;
 }
 
-#about p {
+.skill-level {
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 15px;
+    overflow: hidden;
+}
+
+.skill-bar {
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 0.8s ease-in-out;
+}
+
+/* Estilos para a imagem de fundo de cada card */
+.python-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg') !important;
+}
+
+.django-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg') !important;
+}
+
+.flask-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg') !important;
+}
+
+.postgresql-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg') !important;
+}
+
+.mysql-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg') !important;
+}
+
+.nodejs-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg') !important;
+}
+
+.docker-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg') !important;
+}
+
+.expressjs-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg') !important;
+}
+
+.javascript-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg') !important;
+}
+
+.fastapi-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg') !important;
+}
+
+.mongodb-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg') !important;
+}
+
+.git-card {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg') !important;
+}
+
+/* --- Seção "Sobre Mim" --- */
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.about-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 3rem;
     max-width: 800px;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto;
     text-align: justify;
+    /* Sombra de iluminação e animação de flutuação */
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.1), 0 0 40px rgba(100, 255, 218, 0.05);
+    /* Alterado para 3s para uma animação mais rápida */
+    animation: float 3s ease-in-out infinite; 
 }
 
+.about-card h2 {
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.about-card p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .about-card {
+        padding: 2rem;
+    }
+}
+
+/* --- Seção de Projetos --- */
 
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
 }
 
-.project {
+.project-card {
     background-color: var(--card-bg-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 250px;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.1), 0 0 40px rgba(100, 255, 218, 0.05);
+    animation: float 4s ease-in-out infinite;
 }
 
-.project:hover {
+.project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.project h3 {
+.project-card h3 {
     color: var(--text-color);
     margin-bottom: 0.5rem;
 }
 
-.project p {
+.project-card p {
     font-size: 0.9rem;
     color: var(--secondary-color);
     margin-bottom: 1rem;
 }
 
-.project .btn {
+.project-card .btn {
     background-color: transparent;
     border: 1px solid var(--accent-color);
     color: var(--accent-color);
 }
 
-.project .btn:hover {
+.project-card .btn:hover {
     background-color: var(--accent-color);
     color: var(--bg-color);
 }
 
+/* --- Seção de Contato --- */
 
 #contact .container {
     text-align: center;
 }
 
+.contact-intro {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    max-width: 850px; 
     margin: 0 auto;
     text-align: left;
     background-color: var(--card-bg-color);
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
+    /* Sombra de iluminação e animação de flutuação */
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.1), 0 0 40px rgba(100, 255, 218, 0.05);
+    animation: float 4s ease-in-out infinite;
 }
 
 form label {
@@ -338,7 +784,6 @@ form textarea {
     margin-top: 1rem;
 }
 
-
 footer {
     padding: 2rem 0;
     text-align: center;
@@ -350,7 +795,6 @@ footer p {
     color: var(--secondary-color);
     font-size: 0.9rem;
 }
-
 
 @media (max-width: 768px) {
     .header-content {
