@@ -14,8 +14,7 @@ def get_github_repos():
     
     if response.status_code == 200:
         repos = response.json()
-        
-        selected_repos = ["testegamer-kodland", "Auth-API---FastAPI", "APS2_-Aluguel_de_bicicletas"]
+        selected_repos = ["testegamer-kodland", "Auth-API---FastAPI", "Teste-frontend-RT", "My_portf-lio", "APS2_-Aluguel_de_bicicletas"]
         filtered_repos = [repo for repo in repos if repo["name"] in selected_repos]
         return filtered_repos
     else:
